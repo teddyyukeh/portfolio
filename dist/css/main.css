@@ -4,13 +4,13 @@
   top: 35px;
   cursor: pointer;
   z-index: 3;
-  transition: all 0.8s ease-out; }
+  transition: all 0.5s ease-out; }
   .menu-btn .btn-line {
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
     background: #fff;
-    transition: all 0.8s ease-out; }
+    transition: all 0.5s ease-out; }
   .menu-btn.close {
     transform: rotate(180deg); }
     .menu-btn.close .btn-line:nth-child(1) {
@@ -43,13 +43,13 @@
     background: #373737;
     list-style: none;
     transform: translate3d(0, -100%, 0);
-    transition: all 0.8s ease-out; }
+    transition: all 0.5s ease-out; }
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
   .menu-branding {
     background: #5e5e5e;
     transform: translate3d(0, 100%, 0);
-    transition: all 0.8s ease-out; }
+    transition: all 0.5s ease-out; }
     .menu-branding.show {
       transform: translate3d(0, 0, 0); }
     .menu-branding .portrait {
@@ -58,14 +58,14 @@
       background-image: url(../img/portrait.jpg);
       background-size: cover;
       border-radius: 50%;
-      border: solid 3px #dc143c; }
+      border: solid 3px #ffee00; }
   .menu .nav-item {
     transform: translate3d(600px, 0, 0);
-    transition: all 0.8s ease-out; }
+    transition: all 0.5s ease-out; }
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
     .menu .nav-item.current > a {
-      color: #dc143c; }
+      color: #ffee00; }
   .menu .nav-link {
     display: inline-block;
     position: relative;
@@ -74,9 +74,9 @@
     font-weight: 300;
     color: #fff;
     text-decoration: none;
-    transition: all 0.8s ease-out; }
+    transition: all 0.5s ease-out; }
     .menu .nav-link:hover {
-      color: #dc143c; }
+      color: #ffee00; }
 
 .nav-item:nth-child(1) {
   transition-delay: 0.1s; }
@@ -118,11 +118,11 @@ h1,
 h2,
 h3 {
   margin: 0;
-  font-weight: 400; }
+  font-weight: 350; }
   h1.lg-heading,
   h2.lg-heading,
   h3.lg-heading {
-    font-size: 6rem; }
+    font-size: 5rem; }
   h1.sm-heading,
   h2.sm-heading,
   h3.sm-heading {
@@ -140,7 +140,7 @@ header {
   width: 100%; }
 
 .text-secondary {
-  color: #dc143c; }
+  color: #ffee00; }
 
 main {
   padding: 4rem;
@@ -150,8 +150,8 @@ main {
     main .icons a {
       padding: 0.5rem; }
       main .icons a:hover {
-        color: #dc143c;
-        transition: all 0.8s ease-out; }
+        color: #ffee00;
+        transition: all 0.5s ease-out; }
   main#home {
     overflow: hidden; }
     main#home h1 {
@@ -166,7 +166,7 @@ main {
     grid-area: bioimage;
     margin: auto;
     border-radius: 50%;
-    border: #dc143c 3px solid; }
+    border: #ffee00 3px solid; }
   .about-info .bio {
     grid-area: bio;
     font-size: 1.5rem; }
@@ -179,7 +179,36 @@ main {
   .about-info .job {
     background: #515151;
     padding: 0.5rem;
-    border-bottom: #dc143c 5px solid; }
+    border-bottom: #ffee00 5px solid; }
+
+.projects {
+  display: grid;
+  grid-gap: 1.3rem;
+  grid-template-columns: repeat(3, 1fr); }
+  .projects img {
+    width: 100%;
+    border: 2px #fff solid; }
+    .projects img:hover {
+      opacity: 0.5;
+      border-color: #ffee00;
+      transition: all 0.5s ease-out; }
+
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background: #ffee00;
+    color: #000; }
+
+.btn-dark {
+  background: black;
+  color: #fff; }
+
+.btn-light {
+  background: #c4c4c4;
+  color: #333; }
 
 #main-footer {
   text-align: center;
@@ -187,6 +216,14 @@ main {
   background: #2b2b2b;
   color: #fff;
   height: 60px; }
+
+@media screen and (min-width: 1171px) {
+  .projects {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (max-width: 768px) {
   main {
@@ -217,8 +254,12 @@ main {
       height: 150px; }
   .about-info {
     grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .projects {
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
   main#home h1 {
-    margin-top: 10vh; } }
+    margin-top: 10vh; }
+  .projects {
+    grid-template-columns: 1fr; } }
